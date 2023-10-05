@@ -7,8 +7,8 @@ export class AuthService {
 
   constructor() {
     this.client
-      .setEndpoint(conf.appwriteUrl)
-      .setProject(conf.appwriteProjectId);
+      .setEndpoint(config.appwriteUrl)
+      .setProject(config.appwriteProjectId);
     this.account = new Account(this.client);
   }
   //here we use promisese but we use async await
@@ -34,7 +34,7 @@ export class AuthService {
       // console.log(error);
       throw error;
     }
-    
+
   }
 
   async login({ email, password }) {
