@@ -105,8 +105,35 @@ export class Service {
   }
 
   // file upload service
-  
 
+  async uploadFile(file){
+
+    try {
+        return await this.bucket.createFile(
+            config.appwriteBucketId,
+            ID.unique(),
+            file
+        )
+    } catch (error) {
+        console.log("upload file erorr",error);
+        return false 
+    }
+  }
+
+    async deleteFile(fileId){
+    try {
+     return await this.bucket.deleteFile(
+            config.appwriteBucketId,
+            fileId
+        )
+        
+    } catch (error) {
+        console.log('delte error',  error) 
+    }
+    }
+   
+  
+    
 }
 
 const service = new Service();
