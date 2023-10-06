@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { Footer, Header } from "./components";
 import { Outlet } from "react-router-dom";
 import "./App.css";
+import Input from "./components/Input";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -33,6 +34,7 @@ function App() {
             kano
               {/* <Outlet /> */}
            </main>
+           <Input/>
           <Footer />
         </div>
       </div>
